@@ -1,6 +1,21 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("org.sonarqube")
+}
+
+sonarqube {
+    properties {
+
+        property("sonar.projectKey", "sonarQube_1")
+        property("sonar.projectName", "sonarQube")
+       // property("sonar.organization", "your_organization_key")
+        property("sonar.host.url", "http://localhost:9000")
+        property("sonar.token", "sqp_aa79c4418bd0aace2145021601b9df3d6e667fed")
+        property("sonar.sourceEncoding", "UTF-8")
+        property("sonar.sources", "src/main")
+
+    }
 }
 
 android {
